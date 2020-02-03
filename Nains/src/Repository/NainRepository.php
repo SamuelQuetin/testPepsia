@@ -19,22 +19,11 @@ class NainRepository extends ServiceEntityRepository
         parent::__construct($registry, Nain::class);
     }
 
-    // /**
-    //  * @return Nain[] Returns an array of Nain objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function getAll()
     {
-        return $this->createQueryBuilder('n')
-            ->andWhere('n.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('n.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        return $this->findAll();
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?Nain

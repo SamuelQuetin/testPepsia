@@ -19,22 +19,10 @@ class MineRepository extends ServiceEntityRepository
         parent::__construct($registry, Mine::class);
     }
 
-    // /**
-    //  * @return Mine[] Returns an array of Mine objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function getAll()
     {
-        return $this->createQueryBuilder('m')
-            ->andWhere('m.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('m.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        return $this->findAll();
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?Mine

@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <h1>Toutes les Mines</h1>
+    <table id="tab" class="table table-striped table-bordered table-hover tableau-donnees" style="width:100%">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Profondeur</th>
+            {#            <th scope="col">Taille Moyenne des Nains</th>#}
+        </tr>
+        </thead>
+        <tbody>
+        {% for mine in mines %}
+            <tr class="ligne">
+                <th>{{mine.id}}</th>
+                <td>{{mine.nom}}</td>
+                <td>{{mine.profondeur}}</td>
+                {#                <td>{{mine.tailleMoyenne}}</td>#}
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+{%  block javascripts %}
+    {{ parent() }}
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    {{ encore_entry_script_tags('data-tables') }}
+{% endblock %}

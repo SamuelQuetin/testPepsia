@@ -30,7 +30,7 @@ class Nain
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Mine", inversedBy="id_mine")
      */
-    private $id_mine;
+    private $mine;
 
     public function getId(): ?int
     {
@@ -62,14 +62,14 @@ class Nain
     }
 
 
-    public function getIdMine()
+    public function getMine()
     {
-        return $this->id_mine;
+        return $this->mine;
     }
 
-    public function setIdMine($id_mine): void
+    public function setMine($mine): void
     {
-        $this->id_mine = $id_mine;
+        $this->mine = $mine;
     }
 
 
