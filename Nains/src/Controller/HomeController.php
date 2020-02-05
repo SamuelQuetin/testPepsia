@@ -12,8 +12,9 @@ class HomeController extends AbstractController
 {
     /**
      * @Route("/nain", name="nain")
+     * @Route("/", name="")
      */
-    public function home(NainRepository $repoN)
+    public function nain(NainRepository $repoN)
     {
         $nains = $repoN->getAll();
         return $this->render('home/nain.html.twig', [

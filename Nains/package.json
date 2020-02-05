@@ -17,6 +17,9 @@
         "build": "encore production --progress"
     },
     "dependencies": {
-        "datatables.net-dt": "^1.10.20"
+        "css-loader": "^3.4.2",
+        "datatables.net-dt": "^1.10.20",
+        "image-webpack-loader": "^6.0.0",
+        "style-loader": "^1.1.3"
     }
 }

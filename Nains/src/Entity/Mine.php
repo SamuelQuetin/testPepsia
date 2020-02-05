@@ -2,12 +2,16 @@
 
 namespace App\Entity;
 
+use App\Repository\NainRepository;
+use Doctrine\Common\Persistence\ObjectManagerAware;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Persistence\Mapping\ClassMetadata;
+use Doctrine\Persistence\ObjectManager;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MineRepository")
  */
-class Mine
+class Mine implements ObjectManagerAware
 {
     /**
      * @ORM\Id()
@@ -26,6 +30,7 @@ class Mine
      */
     private $profondeur;
 
+    private $em;
 
 
     public function getId(): ?int
@@ -55,5 +60,23 @@ class Mine
         $this->profondeur = $profondeur;
 
         return $this;
+    }
+
+    public function getTailleMoy(): ?String{
+        return $this->tailleMoy;
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function injectObjectManager(ObjectManager $objectManager, ClassMetadata $classMetadata)
+    {
+        $this->em = $objectManager;
+    }
+
+    private function getEntityManager()
+    {
+        return $this->em;
     }
 }

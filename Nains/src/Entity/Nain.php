@@ -3,6 +3,9 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinColumn;
+use Doctrine\ORM\Mapping\JoinTable;
+use Doctrine\ORM\Mapping\ManyToOne;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\NainRepository")
@@ -28,9 +31,14 @@ class Nain
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Mine", inversedBy="id_mine")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Mine")
+     * @JoinTable(name="mine",
+     *      joinColumns={@JoinColumn(name="mine", referencedColumnName="id")},
+     *      inverseJoinColumns={@JoinColumn(name="id", referencedColumnName="mine", unique=true)}
+     *      )
      */
     private $mine;
+    private $em;
 
     public function getId(): ?int
     {
@@ -72,5 +80,13 @@ class Nain
         $this->mine = $mine;
     }
 
-
+//    public function getMineid()
+//    {
+//        return $this->mine_id;
+//    }
+//
+//    public function setMineid($mine_id): void
+//    {
+//        $this->mine_id = $mine_id;
+//    }
 }

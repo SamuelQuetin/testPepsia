@@ -12,7 +12,7 @@
             <th scope="col">Id</th>
             <th scope="col">Nom</th>
             <th scope="col">Profondeur</th>
-            {#            <th scope="col">Taille Moyenne des Nains</th>#}
+            <th scope="col">Taille Moyenne des Nains</th>
         </tr>
         </thead>
         <tbody>
@@ -21,7 +21,8 @@
                 <th>{{mine.id}}</th>
                 <td>{{mine.nom}}</td>
                 <td>{{mine.profondeur}}</td>
-                {#                <td>{{mine.tailleMoyenne}}</td>#}
+                <td>{{mine.tailleMoy}}</td>
+{#                <td><a class="dropdown-item" href={{ path('taillemoy') }}>Tailles Moyenne de {{mine.nom}}</a></td>#}
             </tr>
 
         {% endfor %}

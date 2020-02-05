@@ -21,8 +21,24 @@ class MineRepository extends ServiceEntityRepository
 
     public function getAll()
     {
-        return $this->findAll();
+        $a = $this->createQueryBuilder('m')
+            //->innerJoin('App\Entity\User',"u",'WITH','v = u')
+            ->InnerJoin('App\Entity\Nain','n','m.id = n.mine_id')
+            ->select('m.id,m.nom,m.profondeur,AVG(n.taille) AS tailleMoy')
+            ->groupBy('m.id,m.nom,m.profondeur')
+//            ->addSelect('m.id')
+//            ->addSelect( 'm.nom')
+//            ->addSelect(' m.profondeur')
+//            ->addSelect('AVG(n.taille) AS tailleMoy')
+//            ->addGroupBy("m.id")
+//            ->addGroupBy("m.nom")
+//            ->addGroupBy("m.profondeur")
+            ->getQuery()
+            ->getResult();
+        return $a;
     }
+
+
 
     /*
     public function findOneBySomeField($value): ?Mine

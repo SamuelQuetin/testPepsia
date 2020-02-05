@@ -10,7 +10,7 @@
 
 .navbar-light .navbar-toggler
 {
-    border-color: dimgray;
+    border-color: white;
 }
 
 .navbar-light .navbar-toggler-icon
@@ -39,6 +39,7 @@
 {
     margin-right: 0%;
     margin-left: 0%;
+    text-align: center;
 }
 
 .actu h1, .actu img
@@ -105,21 +106,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.lesClasses
-{
-    display: flex;
-    flex-direction: column;
-}
-
-.lesTypesOffre
-{
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 10%;
 }
 
 .bg-dark-opacity
