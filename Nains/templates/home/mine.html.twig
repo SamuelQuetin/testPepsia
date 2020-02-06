@@ -18,11 +18,10 @@
         <tbody>
         {% for mine in mines %}
             <tr class="ligne">
-                <th>{{mine.id}}</th>
+                <td>{{mine.id}}</td>
                 <td>{{mine.nom}}</td>
                 <td>{{mine.profondeur}}</td>
                 <td>{{mine.tailleMoy}}</td>
-{#                <td><a class="dropdown-item" href={{ path('taillemoy') }}>Tailles Moyenne de {{mine.nom}}</a></td>#}
             </tr>
 
         {% endfor %}
