@@ -1,7 +1,6 @@
 {
     "devDependencies": {
         "@symfony/webpack-encore": "^0.28.2",
-        "bootstrap": "^4.4.1",
         "core-js": "^3.0.0",
         "jquery": "^3.4.1",
         "popper.js": "^1.16.1",
@@ -17,9 +16,16 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "@zeit/next-css": "1.0.1",
+        "@zeit/next-sass": "1.0.1",
+        "babel-loader": "^8.0.6",
         "css-loader": "^3.4.2",
+        "bootstrap": "^4.4.1",
         "datatables.net-dt": "^1.10.20",
         "image-webpack-loader": "^6.0.0",
+        "next": "^9.2.1",
+        "next.js": "^1.0.3",
+        "node-sass": "4.12.0",
         "style-loader": "^1.1.3"
     }
 }

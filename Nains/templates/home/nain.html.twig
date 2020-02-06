@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Tout les Nains</h1>
+    <h1 class="text-center">Tous les Nains</h1>
     <table id="tab" class="table table-striped table-bordered table-hover tableau-donnees" style="width:100%">
         <thead>
         <tr>
@@ -18,12 +18,11 @@
         <tbody>
         {% for nain in nains %}
             <tr class="ligne">
-                <th>{{nain.id}}</th>
+                <td>{{nain.id}}</td>
                 <td>{{nain.nom}}</td>
                 <td>{{nain.taille}}</td>
                 <td>{{nain.mine.nom}}</td>
             </tr>
-
         {% endfor %}
         </tbody>
     </table>
